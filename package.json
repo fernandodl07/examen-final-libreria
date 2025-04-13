@@ -1,0 +1,20 @@
+{
+  "name": "examen-final-libreria",
+  "version": "1.0.0",
+  "description": "Examen final Fernando de Leon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandodl07/examen-final-libreria.git"
+  },
+  "author": "Fernando de Leon",
+  "type": "module",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fernandodl07/examen-final-libreria/issues"
+  },
+  "homepage": "https://github.com/fernandodl07/examen-final-libreria#readme"
+}
