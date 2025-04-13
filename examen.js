@@ -1,16 +1,13 @@
 import readline from "readline/promises"
 
-//const fs = require('fs');
-
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
   })
 let catalogo = []
 
-/*function guardarArchivo(){
-    fs.writeFileSync('Catalogo.txt')
-}*/
+
+
 
 async function agregarlibro() {
     
@@ -69,7 +66,21 @@ function verEstadisticas(){
     }
 
     let total = catalogo.length
-    //let promedio = catalogo.reduce
+    let promedio = catalogo.reduce((acumulador, libro) => {
+        return acumulador + parseFloat(libro.precio)
+    }, 0) / total
+    let masAntiguo = catalogo.reduce((a, b) => {
+        return a.año < b.año ? a : b})
+    
+    let masCaro = catalogo.reduce((a, b) => {
+        return a.precio > b.precio ? a : b})
+    
+
+    console.log(`Total de libros: ${total}`)
+    console.log(`Promedio de precios: ${promedio.fixed(2)}`)
+    console.log(`Libro más antiguo: ${masantiguo.titulo}`)
+    console.log(`Libro más caro: ${masCaro.titulo}`)
+
 
 }
 
@@ -97,7 +108,11 @@ async function ordenarLibros(){
 
 async function editarLibro(){
     const titulo = (await rl.question("Ingrese el titulo del libro que desea editar: ")).toLowerCase()
-    const libro = catalogo.find((titulo) => .)
+    const libroEncontrado = catalogo.find((libro) => libro.titulo.toLowerCase() === titulo)
+    if (!libroEncontrado) {
+        console.log("Libro no encontrado.")
+        return
+    }
 }
 
 function mostarmenu() {
